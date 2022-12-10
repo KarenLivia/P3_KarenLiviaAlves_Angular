@@ -15,7 +15,7 @@
             <input type="text" [ngClass]="{'is-invalid': registerForm.get('Usuario').errors && registerForm.get('Usuario').touched}"
             formControlName="Usuario" placeholder="Insira o usuario">
             <div *ngIf="registerForm.get('Usuario').hasError('required')
-              && registerForm.get('Usuario').touched" class="invalid-feedback">Usuario é obrigatório.
+              && registerForm.get('Usuario').touched" class="invalid-feedback">Usuário é obrigatório.
             </div><br /><br />
             <label>Senha:</label><br />
             <input type="password"[ngClass]="{'is-invalid': registerForm.get('Senha').errors && registerForm.get('Senha').touched}"
