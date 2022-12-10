@@ -13,7 +13,7 @@
           <div class="center"><br />
             <label>Usuário:</label><br />
             <input type="text" [ngClass]="{'is-invalid': registerForm.get('Usuario').errors && registerForm.get('Usuario').touched}"
-            formControlName="Usuario" placeholder="Insira o usuario">
+            formControlName="Usuario" placeholder="Insira o usuário">
             <div *ngIf="registerForm.get('Usuario').hasError('required')
               && registerForm.get('Usuario').touched" class="invalid-feedback">Usuário é obrigatório.
             </div><br /><br />
