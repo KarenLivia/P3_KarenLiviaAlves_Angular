@@ -15,7 +15,7 @@
             <input type="text" [ngClass]="{'is-invalid': registerForm.get('Nome').errors && registerForm.get('Nome').touched}"
             formControlName="Nome" placeholder="Insira o nome">
             <div *ngIf="registerForm.get('Nome').hasError('required')
-              && registerForm.get('Nome').touched" class="invalid-feedback">Digite o Nome.
+              && registerForm.get('Nome').touched" class="invalid-feedback">Digite o nome.
             </div>
             <div *ngIf="registerForm.get('Nome').hasError('minLength')
               && registerForm.get('Nome').touched" class="invalid-feedback">Nome deve ter no pelo menos 4 caracteres.
@@ -26,7 +26,7 @@
 
             <label>Usuário:</label><br />
             <input type="text" [ngClass]="{'is-invalid': registerForm.get('Usuario').errors && registerForm.get('Usuario').touched}"
-            formControlName="Usuario" placeholder="Insira o usuario">
+            formControlName="Usuario" placeholder="Insira o usuário">
             <div *ngIf="registerForm.get('Usuario').hasError('required')
               && registerForm.get('Usuario').touched" class="invalid-feedback">Usuario é obrigatório.
             </div>
