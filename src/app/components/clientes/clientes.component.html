@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div>
+      <form class="center">
+        <h4>Tabela de clientes</h4><br>
+          <table class="center">
+              <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Opções</th>
+              </tr>
+              <tbody *ngIf="listaCliente && listaCliente.length">
+                <tr *ngFor="let cliente of listaCliente">                
+                  <td>{{cliente.Nome}}</td>
+                  <td>{{cliente.Telefone}}</td>
+                  <td>
+                    <div>
+                      <button (click)="editarCliente(cliente)">Editar</button>
+                      <button (click)="excluirCliente(cliente)">Excluir</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+          </table><br>
+          <button class="btnexterno" [routerLink]="['/cadastro-cliente']">Cadastrar cliente</button><br><br>
+      </form>
+    </div>
+  </body>
+  <footer>
+    <p>Todos os direitos reservados.</p>
+  </footer>
+</html>

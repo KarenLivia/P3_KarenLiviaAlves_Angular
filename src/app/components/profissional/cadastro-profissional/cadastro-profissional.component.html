@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div>
+      <form class="center" [formGroup]="registerForm">
+        <h4 *ngIf="routeId > 0; else cadastrarCliente">Editar profissional</h4>
+        <br />
+        <div>
+        <ng-template #cadastrarCliente>
+          <h4>Cadastrar profissional</h4>
+        </ng-template>
+          <div class="center"><br />
+            <label>Nome do profissional:</label><br />
+            <input type="text" [ngClass]="{'is-invalid': registerForm.get('Nome').errors && registerForm.get('Nome').touched}"
+            formControlName="Nome" placeholder="Insira o nome">
+            <div *ngIf="registerForm.get('Nome').hasError('required')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Nome do profissional é obrigatório.
+            </div>
+            <div *ngIf="registerForm.get('Nome').hasError('minlength')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Nome do profissional deve ter no mínimo 4 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('Nome').hasError('maxlength')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Nome do profissional deve ter no máximo 20 caracteres.
+            </div><br /><br />
+
+            <label>Função:</label><br />
+            <select type="text"[ngClass]="{'is-invalid': registerForm.get('Funcao').errors && registerForm.get('Funcao').touched}"
+              formControlName="Funcao" placeholder="Insira a funcão">
+              <option value=""></option>
+              <option value="Barbeiro">Barbeiro</option>
+              <option value="Manicure">Manicure</option>
+              <option value="Admin">Admin</option>
+            </select>
+            <div *ngIf="registerForm.get('Funcao').hasError('required')
+              && registerForm.get('Funcao').touched" class="invalid-feedback">Função do profissional é obrigatória.
+            </div><br /><br />
+
+            <label>CPF:</label><br />
+            <input type="text" [ngClass]="{'is-invalid': registerForm.get('Cpf').errors && registerForm.get('Cpf').touched}"
+              formControlName="Cpf" placeholder="Insira o CPF">
+            <div *ngIf="registerForm.get('Cpf').hasError('required')
+              && registerForm.get('Cpf').touched" class="invalid-feedback">CPF do profissional é obrigatório.
+            </div>
+            <div *ngIf="registerForm.get('Cpf').hasError('minLength')
+              && registerForm.get('Cpf').touched" class="invalid-feedback">Insira um CPF válido.
+            </div>
+            <div *ngIf="registerForm.get('Cpf').hasError('maxLength')
+              && registerForm.get('Cpf').touched" class="invalid-feedback">Insira um CPF válido.
+            </div><br /><br />
+            <div>
+              <button class="btnexterno" (click)="limparForm()">Limpar</button>
+              <button class="btnexterno" [disabled]="!registerForm.valid" (click)="cadastrar()">Salvar alterações
+              </button><br /><br />
+              <a [routerLink]="['/profissional']">Voltar para tabela de profissionais</a>
+            </div>
+          </div>
+        </div>
+      </form><br/>
+    </div>
+  </body>
+  <footer>
+  <p>Todos os direitos reservados.</p>
+  </footer>
+</html>

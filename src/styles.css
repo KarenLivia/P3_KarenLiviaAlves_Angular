@@ -1,0 +1,64 @@
+/* Add application styles & imports to this file! */
+html{
+  background-color: #e6e1e7;
+}
+
+button {
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 6px 0 rgba(0,0,0,0.10);
+  font-size: 12px;
+}
+
+button:hover {
+  background-color: #ad5ac7;
+}
+
+button:active {
+  background-color: #7b3e8e;
+  transform: translateY(4px);
+  color: #ffffff;
+}
+
+body{
+  background-color: #e6e1e7;
+}
+
+.link{
+  font-size: 12px;
+}
+
+.center{
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  background-color: #f6f2f7
+}
+
+footer{
+  font-size: 12px;
+  text-align: center;
+}
+
+table, td{
+  border: 1px solid #7b3e8e;
+  font-size: 14px;
+  padding: 15px;
+}
+
+th{
+  font-size: 16px;
+  border: 1px solid #7b3e8e;
+  padding: 15px;
+}
+
+.btnexterno{
+  font-size: 16px;
+}
+
+a{
+  font-size: 12px;
+}
+
+.tam{
+  font-size: 16px;
+}

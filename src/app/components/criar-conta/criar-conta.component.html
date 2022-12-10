@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div>
+      <form class="center" [formGroup]="registerForm">
+        <h4>Criar conta</h4>
+        <br />
+        <div>
+          <div class="center"><br />
+            <label>Nome:</label><br />
+            <input type="text" [ngClass]="{'is-invalid': registerForm.get('Nome').errors && registerForm.get('Nome').touched}"
+            formControlName="Nome" placeholder="Insira o nome">
+            <div *ngIf="registerForm.get('Nome').hasError('required')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Digite o Nome.
+            </div>
+            <div *ngIf="registerForm.get('Nome').hasError('minLength')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Nome deve ter no pelo menos 4 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('Nome').hasError('maxLength')
+              && registerForm.get('Nome').touched" class="invalid-feedback">Nome deve ter no máximo 10 caracteres.
+            </div><br /><br />
+
+            <label>Usuário:</label><br />
+            <input type="text" [ngClass]="{'is-invalid': registerForm.get('Usuario').errors && registerForm.get('Usuario').touched}"
+            formControlName="Usuario" placeholder="Insira o usuario">
+            <div *ngIf="registerForm.get('Usuario').hasError('required')
+              && registerForm.get('Usuario').touched" class="invalid-feedback">Usuario é obrigatório.
+            </div>
+            <div *ngIf="registerForm.get('Usuario').hasError('minLength')
+              && registerForm.get('Usuario').touched" class="invalid-feedback">Usuario deve ter no pelo menos 4 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('Usuario').hasError('maxLength')
+              && registerForm.get('Usuario').touched" class="invalid-feedback">Usuario deve ter no máximo 10 caracteres.
+            </div><br /><br />
+
+            <label>Senha:</label><br />
+            <input type="password"[ngClass]="{'is-invalid': registerForm.get('Senha').errors && registerForm.get('Senha').touched}"
+              formControlName="Senha" placeholder="Insira a senha">
+            <div *ngIf="registerForm.get('Senha').hasError('required')
+              && registerForm.get('Senha').touched" class="invalid-feedback">Digite a senha.
+            </div>
+            <div *ngIf="registerForm.get('Senha').hasError('minLength')
+              && registerForm.get('Senha').touched" class="invalid-feedback">Senha deve ter no pelo menos 4 caracteres.
+            </div>
+            <div *ngIf="registerForm.get('Senha').hasError('maxLength')
+              && registerForm.get('Senha').touched" class="invalid-feedback">Senha deve ter no máximo 10 caracteres.
+            </div><br /><br />
+
+            <div *ngIf="usuarioExistente == true">
+              <span>Usuário já existe.</span>
+            </div>
+            <div>
+              <button class="btnexterno" [disabled]="!registerForm.valid" (click)="criar()">Criar
+              </button><br /><br />
+            </div>
+          </div>
+        </div>
+      </form><br/>
+    </div>
+  </body>
+  <footer>
+  <p>Todos os direitos reservados.</p>
+  </footer>
+</html>

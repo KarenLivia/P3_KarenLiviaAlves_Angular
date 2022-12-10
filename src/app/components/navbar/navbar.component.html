@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid">
+  <a class="navbar-brand" [routerLink]="['/']"> {{name}}</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+  <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link" [routerLink]="['/clientes']">Clientes</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link" [routerLink]="['/profissional']">Profissionais</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link" [routerLink]="['/servicos']">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link" [routerLink]="['/sobre']">Sobre</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+        class="nav-link" [routerLink]="['/login']">Sair</a>
+      </li>
+    </ul>
+  </div>
+</div>
+</nav>
